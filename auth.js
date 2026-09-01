@@ -21,9 +21,9 @@
    ============================================================ */
 
 const WEB3FORMS_CONFIG = {
-  enabled: false,               // cambia a true cuando pegues tu accessKey
+  enabled: true,               // cambia a true cuando pegues tu accessKey
   accessKey: "TU_ACCESS_KEY",
-  notifyTo: "wirmeldiaz0@gmail.com"
+  notifyTo: "https://formspree.io/f/mdeoeavn"
 };
 
 const USERS_KEY = "deskassist_users";
