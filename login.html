@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Iniciar sesión — DeskAssist Global</title>
+  <meta name="description" content="Inicia sesión en tu cuenta de DeskAssist Global." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="brand">
+        <svg class="brand-mark" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="24" cy="24" r="21" stroke="#4fb0e6" stroke-width="2.4"/>
+          <path d="M3 24h42M24 3c6 5.5 9 12.8 9 21s-3 15.5-9 21c-6-5.5-9-12.8-9-21s3-15.5 9-21Z" stroke="#4fb0e6" stroke-width="2"/>
+          <circle cx="24" cy="24" r="6.5" fill="#f2782f"/>
+        </svg>
+        DeskAssist <span class="brand-sub">Global</span>
+      </a>
+
+      <nav class="main-nav" id="mainNav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li class="has-dropdown">
+            <a href="servicios.html">Servicios</a>
+            <ul class="dropdown">
+              <li><a href="servicios.html#instalacion">Instalación &amp; Configuración<span class="dd-desc">Software, redes Wi-Fi, correo, impresoras</span></a></li>
+              <li><a href="servicios.html#mantenimiento">Mantenimiento &amp; Soporte<span class="dd-desc">Optimización, seguridad, respaldo, diagnóstico</span></a></li>
+            </ul>
+          </li>
+          <li><a href="beneficios.html">Beneficios</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li class="has-dropdown">
+            <a href="login.html">Cuenta</a>
+            <ul class="dropdown" id="accountDropdown">
+              <li><a href="login.html" data-auth="guest">Iniciar sesión<span class="dd-desc">Accede a tu área de cliente</span></a></li>
+              <li><a href="registro.html" data-auth="guest">Crear cuenta<span class="dd-desc">Regístrate en minutos</span></a></li>
+              <li><a href="cuenta.html" data-auth="user" hidden>Mi cuenta<span class="dd-desc">Ver mis datos</span></a></li>
+              <li><a href="#" data-auth="user" id="navLogout" hidden>Cerrar sesión<span class="dd-desc">Salir de tu cuenta</span></a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a class="btn-whatsapp-nav" href="https://wa.me/18496541043?text=Hola%20DeskAssist%20Global,%20quisiera%20agendar%20una%20cita" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.05-1.36A10 10 0 1 0 12 2Zm5.6 14.2c-.24.68-1.4 1.3-1.94 1.36-.5.06-1.12.09-1.8-.11a13.6 13.6 0 0 1-4.9-2.66 13.9 13.9 0 0 1-3.09-3.86c-.6-1.02-.29-1.7.1-2.14.24-.27.6-.66.9-.66.3 0 .5.01.7.02.22.01.5-.04.78.6.28.65.96 2.24 1.05 2.4.08.16.14.35.02.56-.12.22-.18.35-.36.55-.18.2-.37.44-.53.6-.18.17-.36.36-.16.7.2.35.9 1.5 1.95 2.42 1.35 1.2 2.48 1.57 2.84 1.75.36.17.57.14.79-.09.22-.24.9-1.04 1.14-1.4.24-.36.48-.3.8-.18.32.12 2.05.97 2.4 1.14.36.18.6.27.68.42.09.15.09.87-.15 1.55Z"/></svg>
+          WhatsApp
+        </a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false"><span></span></button>
+      </div>
+    </div>
+  </header>
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumbs"><a href="index.html">Inicio</a> / <span>Iniciar sesión</span></div>
+      <span class="kicker">Área de cliente</span>
+      <h1>Bienvenido de nuevo</h1>
+      <p>Ingresa con tu correo y contraseña para ver tu cuenta.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container auth-wrap">
+      <div class="auth-card">
+        <h2>Iniciar sesión</h2>
+        <p>Accede a tu área de cliente.</p>
+
+        <div id="loginMsg" class="form-msg"></div>
+
+        <form id="loginForm" novalidate>
+          <div class="field">
+            <label for="loginCorreo">Correo electrónico</label>
+            <input type="email" id="loginCorreo" name="correo" placeholder="tucorreo@ejemplo.com" required>
+          </div>
+          <div class="field">
+            <label for="loginPassword">Contraseña</label>
+            <input type="password" id="loginPassword" name="password" placeholder="Tu contraseña" required>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">Ingresar</button>
+        </form>
+
+        <p class="auth-switch">¿Aún no tienes cuenta? <a href="registro.html">Regístrate aquí</a></p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", async function (e) {
+      e.preventDefault();
+      const msg = document.getElementById("loginMsg");
+      msg.className = "form-msg";
+
+      const correo = document.getElementById("loginCorreo").value;
+      const password = document.getElementById("loginPassword").value;
+
+      try {
+        await loginUser({ correo, password });
+        msg.textContent = "Sesión iniciada. Redirigiendo...";
+        msg.classList.add("success", "show");
+        setTimeout(function () {
+          window.location.href = "cuenta.html";
+        }, 700);
+      } catch (err) {
+        msg.textContent = err.message || "No se pudo iniciar sesión.";
+        msg.classList.add("error", "show");
+      }
+    });
+  </script>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="24" cy="24" r="21" stroke="#4fb0e6" stroke-width="2.4"/>
+              <path d="M3 24h42M24 3c6 5.5 9 12.8 9 21s-3 15.5-9 21c-6-5.5-9-12.8-9-21s3-15.5 9-21Z" stroke="#4fb0e6" stroke-width="2"/>
+              <circle cx="24" cy="24" r="6.5" fill="#f2782f"/>
+            </svg>
+            DeskAssist Global
+          </div>
+          <p style="max-width:34ch;">Soluciones informáticas y de oficina a distancia. Instalamos, configuramos y mantenemos tus equipos sin que tengas que moverte de tu escritorio.</p>
+        </div>
+        <div>
+          <h4>Navegación</h4>
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="beneficios.html">Beneficios</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contacto directo</h4>
+          <ul>
+            <li><a href="https://wa.me/18496541043" target="_blank" rel="noopener">Tel/WhatsApp: 849-654-1043</a></li>
+            <li><a href="mailto:wirmeldiaz0@gmail.com">wirmeldiaz0@gmail.com</a></li>
+            <li><a href="https://www.deskassistglobal.com" target="_blank" rel="noopener">www.deskassistglobal.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 DeskAssist Global. Todos los derechos reservados.</span>
+        <span>Soporte remoto disponible 24/7.</span>
+      </div>
+    </div>
+  </footer>
+
+  <a class="wa-float" href="https://wa.me/18496541043?text=Hola%20DeskAssist%20Global,%20necesito%20soporte" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
+    <svg viewBox="0 0 24 24" fill="#ffffff" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.05-1.36A10 10 0 1 0 12 2Zm5.6 14.2c-.24.68-1.4 1.3-1.94 1.36-.5.06-1.12.09-1.8-.11a13.6 13.6 0 0 1-4.9-2.66 13.9 13.9 0 0 1-3.09-3.86c-.6-1.02-.29-1.7.1-2.14.24-.27.6-.66.9-.66.3 0 .5.01.7.02.22.01.5-.04.78.6.28.65.96 2.24 1.05 2.4.08.16.14.35.02.56-.12.22-.18.35-.36.55-.18.2-.37.44-.53.6-.18.17-.36.36-.16.7.2.35.9 1.5 1.95 2.42 1.35 1.2 2.48 1.57 2.84 1.75.36.17.57.14.79-.09.22-.24.9-1.04 1.14-1.4.24-.36.48-.3.8-.18.32.12 2.05.97 2.4 1.14.36.18.6.27.68.42.09.15.09.87-.15 1.55Z"/></svg>
+  </a>
+
+  <script src="js/auth.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
